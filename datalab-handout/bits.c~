@@ -150,11 +150,7 @@ int bitNor(int x, int y) {
  *   Rating: 2
  */
 int isNotEqual(int x, int y) {
-
-
-
-  return 2;
-
+  return !(x^y);
 }
 /* 
  * anyOddBit - return 1 if any odd-numbered bit in word set to 1
