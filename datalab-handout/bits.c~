@@ -140,7 +140,7 @@ NOTES:
  *   Rating: 1
  */
 int bitNor(int x, int y) {
-  return 2;
+  return ~x&~y;
 }
 /* 
  * isNotEqual - return 0 if x == y, and 1 otherwise 
