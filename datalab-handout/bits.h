@@ -1,0 +1,27 @@
+
+int bitNor(int, int);
+int test_bitNor(int, int);
+int isNotEqual(int, int);
+int test_isNotEqual(int, int);
+int anyOddBit();
+int test_anyOddBit();
+int rotateLeft(int, int);
+int test_rotateLeft(int, int);
+int bitParity(int);
+int test_bitParity(int);
+int tmin();
+int test_tmin();
+int fitsBits(int, int);
+int test_fitsBits(int, int);
+int rempwr2(int, int);
+int test_rempwr2(int, int);
+int addOK(int, int);
+int test_addOK(int, int);
+int isNonZero(int);
+int test_isNonZero(int);
+int ilog2(int);
+int test_ilog2(int);
+unsigned float_half(unsigned);
+unsigned test_float_half(unsigned);
+unsigned float_twice(unsigned);
+unsigned test_float_twice(unsigned);
