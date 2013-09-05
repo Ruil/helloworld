@@ -174,7 +174,7 @@ int anyOddBit(int x) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-  return (x<<n)|((x>>(32+~(n+~0)))&(~((~0>>1)<<n)));
+  return (x<<n)^((x>>(32+~(n+~0)))&(~(~0<<n)));
 }
 /*
  * bitParity - returns 1 if x contains an odd number of 0's
@@ -184,7 +184,13 @@ int rotateLeft(int x, int n) {
  *   Rating: 4
  */
 int bitParity(int x) {
-  return 2;
+  x=((x>>16)^x);
+  x=((x>>8)^x);
+  x=((x>>4)^x);
+  x=((x>>2)^x);
+  x=((x>>1)^x);
+  x=x&1;
+  return !!x;
 }
 /* 
  * tmin - return minimum two's complement integer 
