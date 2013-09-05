@@ -199,7 +199,7 @@ int bitParity(int x) {
  *   Rating: 1
  */
 int tmin(void) {
-  return 2;
+  return ~0;
 }
 /* 
  * fitsBits - return 1 if x can be represented as an 
