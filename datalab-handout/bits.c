@@ -160,7 +160,10 @@ int isNotEqual(int x, int y) {
  *   Rating: 2
  */
 int anyOddBit(int x) {
-    return 2;
+    int c=170;
+    c=c^(c<<8);
+    c=c^(c<<16);
+    return !!(x&c);
 }
 /* 
  * rotateLeft - Rotate x to the left by n
