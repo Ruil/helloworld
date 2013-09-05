@@ -174,7 +174,7 @@ int anyOddBit(int x) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-  return 2;
+  return (x << n) | (x >> (32 - n)) & ~((-1 >> n) << n);
 }
 /*
  * bitParity - returns 1 if x contains an odd number of 0's
