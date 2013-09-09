@@ -235,7 +235,10 @@ int rempwr2(int x, int n) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-  return 2;
+  int mask=~(1<<31);
+  int first=!!(((x&mask)+(y&mask))&(~mask));
+  int second=(((((x>>31)&1)+((y>>31)&1))+first)>>1);
+  return !(first^second);
 }
 /* 
  * isNonZero - Check whether x is nonzero using
@@ -246,7 +249,9 @@ int addOK(int x, int y) {
  *   Rating: 4 
  */
 int isNonZero(int x) {
-  return 2;
+  // negative: x>>31 
+  // positive: 0-x>>31
+  return ((x|(0+~(x+~0)))>>31)&1;
 }
 /*
  * ilog2 - return floor(log base 2 of x), where x > 0

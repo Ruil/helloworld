@@ -249,7 +249,9 @@ int addOK(int x, int y) {
  *   Rating: 4 
  */
 int isNonZero(int x) {
-  return 2;
+  // negative: x>>31 
+  // positive: 0-x>>31
+  return ((x|(0+~(x+~0)))>>31)&1;
 }
 /*
  * ilog2 - return floor(log base 2 of x), where x > 0
