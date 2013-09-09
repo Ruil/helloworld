@@ -222,7 +222,7 @@ int fitsBits(int x, int n) {
  *   Rating: 3
  */
 int rempwr2(int x, int n) {
-    return 2;
+    return (x&(~((-1>>31)<<n)))+((~((1<<n)+(~0)))&(x>>31));
 }
 /* 
  * addOK - Determine if can compute x+y without overflow
