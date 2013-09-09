@@ -223,7 +223,7 @@ int fitsBits(int x, int n) {
  */
 int rempwr2(int x, int n) {
 	int mask=x>>31;
-    return (((x^mask)+(1&mask))&(~(((~0)>>31)<<n)));
+    return ((((x^mask)+(1&mask))&(~(((~0)>>31)<<n)))^mask)+(1&mask);
 }
 
 /* 
@@ -235,7 +235,10 @@ int rempwr2(int x, int n) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-  return 2;
+  int mask=~(1<<31);
+  int first=!!(((x&mask)+(y&mask))&(~mask));
+  int second=(((((x>>31)&1)+((y>>31)&1))+first)>>1);
+  return !(first^second);
 }
 /* 
  * isNonZero - Check whether x is nonzero using
